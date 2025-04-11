@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A gallery of the destinations I've visited." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Destinations</title>
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <div class="logo-title">
+      <img src="images/logo.png" alt="Travel Diary Logo" class="logo">
+      <h1>My Travel Diary</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <h2 id="destination-title">Destinations Gallery</h2>
+    <section id="destination-content" class="gallery">
+      <!-- Default gallery -->
+      <a href="destinations.html?destination=paris">
+        <img src="images/paris.jpg" alt="Eiffel Tower in Paris" />
+        <p>Paris</p>
+      </a>
+      <a href="destinations.html?destination=tokyo">
+        <img src="images/tokyo.jpg" alt="Tokyo skyline at night" />
+        <p>Tokyo</p>
+      </a>
+      <a href="destinations.html?destination=london">
+        <img src="images/london.jpg" alt="London Bridge" />
+        <p>London</p>
+      </a>
+      <a href="destinations.html?destination=newyork">
+        <img src="images/newyork.jpg" alt="New York Cityscape" />
+        <p>New York</p>
+      </a>
+      <a href="destinations.html?destination=rome">
+        <img src="images/rome.jpg" alt="Rome Colosseum" />
+        <p>Rome</p>
+      </a>
+      <a href="destinations.html?destination=cairo">
+        <img src="images/cairo1.jpg" alt="Cairo Pyramids" />
+        <p>Cairo</p>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Travel Diary</p>
+  </footer>
+
+  <script>
+    // JavaScript to handle dynamic content loading
+    const urlParams = new URLSearchParams(window.location.search);
+    const destination = urlParams.get('destination');
+
+    if (destination) {
+      const destinationsData = {
+        paris: {
+          title: "Paris, France: The city of light",
+          image: "images/pariscityscape.jpg",
+          description: "Strolling along the Seine at sunset, with its golden glow reflecting off the water, feels like stepping into a dream. Majestic landmarks like the Eiffel Tower and Notre-Dame Cathedral stand as timeless testaments to Parisian elegance. Cobblestone streets lead you to quaint patisseries, where buttery croissants and delicate macarons await your indulgence.From sipping velvety café au lait in a sidewalk café to exploring world-class art at the Louvre, every moment in Paris whispers romance and sophistication. This enchanting city effortlessly blends history, culture, and joie de vivre—leaving every traveler spellbound."
+        },
+        tokyo: {
+          title: "Tokyo, Japan: A symphony of old and new",
+          image: "images/tokyo.jpg",
+          description: "From bustling streets to serene temples, Tokyo offers a unique blend of modernity and tradition. Neon-lit skyscrapers tower above ancient shrines, where the scent of incense mingles with the aroma of street food stalls selling takoyaki and ramen. In Shibuya, the energy of the famous crossing is electrifying, while just a short train ride away, the peaceful gardens of Asakusa invite quiet reflection. Dive into Harajuku’s quirky fashion scene or savor the precision of a sushi master’s craft in Tsukiji. Tokyo seamlessly marries cutting-edge innovation with timeless customs, offering an unforgettable journey through its vibrant neighborhoods, each with its own story to tell."
+        },
+        london: {
+          title: "London, UK: History meets modernity",
+          image: "images/london.jpg",
+          description: "Exploring iconic landmarks like Big Ben and the London Eye made this trip unforgettable. This vibrant city is a treasure trove of history, culture, and charm, where centuries-old castles stand alongside sleek skyscrapers. Wander through the hallowed halls of the British Museum or lose yourself in the literary magic of Shakespeare’s Globe Theatre. Stroll along the Thames at sunset, with its shimmering reflections of the city’s grandeur, or indulge in a quintessential afternoon tea experience. From the bustling markets of Camden to the serene beauty of Hyde Park, London effortlessly blends tradition with innovation, leaving every visitor enchanted by its timeless allure."
+        },
+        newyork: {
+          title: "New York, USA: The city that never sleeps",
+          image: "images/newyork.jpg",
+          description: "The city that never sleeps dazzled me with its towering skyscrapers, dazzling Broadway shows, and vibrant tapestry of cultures. From the bright lights of Times Square to the serene paths of Central Park, New York is a city of contrasts and endless energy. Savor world-class cuisine in food trucks or Michelin-starred restaurants, explore world-famous museums like the Met and MoMA, or catch a breathtaking performance on Broadway. Each neighborhood—whether it’s the artistic vibes of Brooklyn, the sophistication of Manhattan, or the cultural richness of Queens—offers its own unique charm. NYC pulses with life, creativity, and opportunity, promising an unforgettable adventure at every turn."
+        },
+        rome: {
+          title: "Rome, Italy",
+          image: "images/rome.jpg",
+          description: "This eternal city breathes history, where every cobblestone whispers tales of emperors, gladiators, and artists. Stand in awe before the mighty Colosseum, stroll through the grandeur of the Roman Forum, or toss a coin into the Trevi Fountain to ensure your return. In between exploring centuries-old landmarks, indulge in culinary masterpieces"
+        },
+        cairo: {
+          title: "Cairo, Egypt: A journey through time",
+          image: "images/cairo1.jpg",
+          description: "The pyramids and rich history of Cairo left me in awe of this ancient civilization. Cairo stands in the shadow of the Great Pyramids of Giza and the  Sphinx watching silently from a far. Being in Cairo feels like stepping back thousands of years. It is a city buzzes with life, where bustling bazaars overflow with spices, textiles, and treasures and the majestic Al-Azhar Mosque whispers stories of faith and resilience. From exploring the relics of the Pharaohs at the Egyptian Museum to cruising along the timeless Nile River, Cairo is a living museum that bridges the gap between antiquity and modernity. This vibrant city invites you to uncover its secrets and marvel at humanity’s enduring legacy."
+        }
+      };
+
+      const selectedDestination = destinationsData[destination];
+      if (selectedDestination) {
+        document.getElementById('destination-title').textContent = selectedDestination.title;
+        document.getElementById('destination-content').innerHTML = `
+          <img src="${selectedDestination.image}" alt="${selectedDestination.title}" />
+          <p>${selectedDestination.description}</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

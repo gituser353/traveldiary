@@ -10,104 +10,193 @@
 </head>
 <body>
   <header>
-  <div class="header-container">
-    <div class="logo-title">
-      <img src="images/logo.png" alt="Travel Diary Logo" class="logo">
-      <h1>My Travel Diary</h1>
+    <div class="header-container">
+      <div class="logo-title">
+        <img src="images/logo.png" alt="Travel Diary Logo" class="logo">
+        <h1>My Travel Diary</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown">
+            <a href="#">Destinations</a>
+            <ul class="dropdown-menu">
+              <li><a href="destinations.html?destination=paris">Paris</a></li>
+              <li><a href="destinations.html?destination=tokyo">Tokyo</a></li>
+              <li><a href="destinations.html?destination=london">London</a></li>
+              <li><a href="destinations.html?destination=newyork">New York</a></li>
+              <li><a href="destinations.html?destination=rome">Rome</a></li>
+              <li><a href="destinations.html?destination=cairo">Cairo</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  </header>
   <main>
-    <h2 id="destination-title">Destinations Gallery</h2>
-    <section id="destination-content" class="gallery">
-      <!-- Default gallery -->
-      <a href="destinations.html?destination=paris">
-        <img src="images/paris.jpg" alt="Eiffel Tower in Paris" />
-        <p>Paris</p>
-      </a>
-      <a href="destinations.html?destination=tokyo">
-        <img src="images/tokyo.jpg" alt="Tokyo skyline at night" />
-        <p>Tokyo</p>
-      </a>
-      <a href="destinations.html?destination=london">
-        <img src="images/london.jpg" alt="London Bridge" />
-        <p>London</p>
-      </a>
-      <a href="destinations.html?destination=newyork">
-        <img src="images/newyork.jpg" alt="New York Cityscape" />
-        <p>New York</p>
-      </a>
-      <a href="destinations.html?destination=rome">
-        <img src="images/rome.jpg" alt="Rome Colosseum" />
-        <p>Rome</p>
-      </a>
-      <a href="destinations.html?destination=cairo">
-        <img src="images/cairo1.jpg" alt="Cairo Pyramids" />
-        <p>Cairo</p>
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 My Travel Diary</p>
-  </footer>
-
-  <script>
-    // JavaScript to handle dynamic content loading
-    const urlParams = new URLSearchParams(window.location.search);
-    const destination = urlParams.get('destination');
-
-    if (destination) {
-      const destinationsData = {
-        paris: {
-          title: "Paris, France: The city of light",
-          image: "images/pariscityscape.jpg",
-          description: "Strolling along the Seine at sunset, with its golden glow reflecting off the water, feels like stepping into a dream. Majestic landmarks like the Eiffel Tower and Notre-Dame Cathedral stand as timeless testaments to Parisian elegance. Cobblestone streets lead you to quaint patisseries, where buttery croissants and delicate macarons await your indulgence.From sipping velvety café au lait in a sidewalk café to exploring world-class art at the Louvre, every moment in Paris whispers romance and sophistication. This enchanting city effortlessly blends history, culture, and joie de vivre—leaving every traveler spellbound."
-        },
-        tokyo: {
-          title: "Tokyo, Japan: A symphony of old and new",
-          image: "images/tokyo.jpg",
-          description: "From bustling streets to serene temples, Tokyo offers a unique blend of modernity and tradition. Neon-lit skyscrapers tower above ancient shrines, where the scent of incense mingles with the aroma of street food stalls selling takoyaki and ramen. In Shibuya, the energy of the famous crossing is electrifying, while just a short train ride away, the peaceful gardens of Asakusa invite quiet reflection. Dive into Harajuku’s quirky fashion scene or savor the precision of a sushi master’s craft in Tsukiji. Tokyo seamlessly marries cutting-edge innovation with timeless customs, offering an unforgettable journey through its vibrant neighborhoods, each with its own story to tell."
-        },
-        london: {
-          title: "London, UK: History meets modernity",
-          image: "images/london.jpg",
-          description: "Exploring iconic landmarks like Big Ben and the London Eye made this trip unforgettable. This vibrant city is a treasure trove of history, culture, and charm, where centuries-old castles stand alongside sleek skyscrapers. Wander through the hallowed halls of the British Museum or lose yourself in the literary magic of Shakespeare’s Globe Theatre. Stroll along the Thames at sunset, with its shimmering reflections of the city’s grandeur, or indulge in a quintessential afternoon tea experience. From the bustling markets of Camden to the serene beauty of Hyde Park, London effortlessly blends tradition with innovation, leaving every visitor enchanted by its timeless allure."
-        },
-        newyork: {
-          title: "New York, USA: The city that never sleeps",
-          image: "images/newyork.jpg",
-          description: "The city that never sleeps dazzled me with its towering skyscrapers, dazzling Broadway shows, and vibrant tapestry of cultures. From the bright lights of Times Square to the serene paths of Central Park, New York is a city of contrasts and endless energy. Savor world-class cuisine in food trucks or Michelin-starred restaurants, explore world-famous museums like the Met and MoMA, or catch a breathtaking performance on Broadway. Each neighborhood—whether it’s the artistic vibes of Brooklyn, the sophistication of Manhattan, or the cultural richness of Queens—offers its own unique charm. NYC pulses with life, creativity, and opportunity, promising an unforgettable adventure at every turn."
-        },
-        rome: {
-          title: "Rome, Italy",
-          image: "images/rome.jpg",
-          description: "This eternal city breathes history, where every cobblestone whispers tales of emperors, gladiators, and artists. Stand in awe before the mighty Colosseum, stroll through the grandeur of the Roman Forum, or toss a coin into the Trevi Fountain to ensure your return. In between exploring centuries-old landmarks, indulge in culinary masterpieces"
-        },
-        cairo: {
-          title: "Cairo, Egypt: A journey through time",
-          image: "images/cairo1.jpg",
-          description: "The pyramids and rich history of Cairo left me in awe of this ancient civilization. Cairo stands in the shadow of the Great Pyramids of Giza and the  Sphinx watching silently from a far. Being in Cairo feels like stepping back thousands of years. It is a city buzzes with life, where bustling bazaars overflow with spices, textiles, and treasures and the majestic Al-Azhar Mosque whispers stories of faith and resilience. From exploring the relics of the Pharaohs at the Egyptian Museum to cruising along the timeless Nile River, Cairo is a living museum that bridges the gap between antiquity and modernity. This vibrant city invites you to uncover its secrets and marvel at humanity’s enduring legacy."
-        }
-      };
-
-      const selectedDestination = destinationsData[destination];
-      if (selectedDestination) {
-        document.getElementById('destination-title').textContent = selectedDestination.title;
-        document.getElementById('destination-content').innerHTML = `
-          <img src="${selectedDestination.image}" alt="${selectedDestination.title}" />
-          <p>${selectedDestination.description}</p>
-        `;
+  <h2 id="destination-title">Destinations Gallery</h2>
+  <section id="destination-content" class="gallery">
+    <!-- Default gallery -->
+    <a href="destinations.html?destination=paris">
+      <img src="images/paris.jpg" alt="Eiffel Tower in Paris" />
+      <p>Paris</p>
+    </a>
+    <a href="destinations.html?destination=tokyo">
+      <img src="images/tokyo.jpg" alt="Tokyo skyline at night" />
+      <p>Tokyo</p>
+    </a>
+    <a href="destinations.html?destination=london">
+      <img src="images/london.jpg" alt="London Bridge" />
+      <p>London</p>
+    </a>
+    <a href="destinations.html?destination=newyork">
+      <img src="images/newyork.jpg" alt="New York Cityscape" />
+      <p>New York</p>
+    </a>
+    <a href="destinations.html?destination=rome">
+      <img src="images/rome.jpg" alt="Rome Colosseum" />
+      <p>Rome</p>
+    </a>
+    <a href="destinations.html?destination=cairo">
+      <img src="images/cairo1.jpg" alt="Cairo Pyramids" />
+      <p>Cairo</p>
+    </a>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2025 My Travel Diary</p>
+</footer>
+<script>
+  // JavaScript to handle dynamic content loading
+  const urlParams = new URLSearchParams(window.location.search);
+  const destination = urlParams.get('destination');
+  if (destination) {
+    const destinationsData = {
+      paris: {
+        title: "Paris, France: The city of light",
+        image: "images/pariscityscape.jpg",
+        description: `
+          <p><strong>Visited:</strong> June 2023</p>
+          <p>Strolling along the Seine at sunset, with its golden glow reflecting off the water, feels like stepping into a dream. Majestic landmarks like the Eiffel Tower and Notre-Dame Cathedral stand as timeless testaments to Parisian elegance. Cobblestone streets lead you to quaint patisseries, where buttery croissants and delicate macarons await your indulgence.</p>
+          <p>From sipping velvety café au lait in a sidewalk café to exploring world-class art at the Louvre, every moment in Paris whispers romance and sophistication. This enchanting city effortlessly blends history, culture, and joie de vivre—leaving every traveler spellbound.</p>
+          <p><strong>Host:</strong> <a href="https://www.airbnb.com/h/my-paris-stay" target="_blank">Charming Airbnb near Montmartre</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.998749056097!2d2.294350615731287!3d48.85837007928763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e3bfa9%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1698745678901!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/Paris1.jpeg", caption: "I watched the sun dip below the Parisian skyline while standing on the top level of the Eiffel Tower. Its golden glow reflected off the Seine River, creating an unforgettable, dreamlike atmosphere. This dazzling display feels like being in a fairy tale." },
+          { src: "images/Paris2.jpeg", caption: "The Pont au Change is a historic bridge in Paris that spans the Seine River, connecting the Île de la Cité to the Right Bank of the city. It  is an elegant example of 19th-century urban architecture, featuring stone arches and ornamental details." },
+          { src: "images/Paris3.jpeg", caption: "My visit to the Galerie Furstenberg was a serene and inspiring experience. Nestled in Paris, this hidden gem showcases exquisite art exhibitions in an intimate setting.Its elegant ambiance and carefully curated works evoke contemplation and awe, making it a perfect retreat for art lovers seeking tranquility and inspiration " },
+          { src: "images/Paris5.jpeg", caption: "The Arc de Triomphe du Carrousel is a stunning architectural gem located in Paris, near the Louvre Museum and the Tuileries Gardens. Historically, it served as a symbolic gateway between the Tuileries Palace (which no longer exists) and the rest of Paris, marking the grandeur of the First French Empire." }
+        ]
+      },
+      tokyo: {
+        title: "Tokyo, Japan: A symphony of old and new",
+        image: "images/tokyo.jpg",
+        description: `
+          <p><strong>Visited:</strong> August 2023</p>
+          <p>From bustling streets to serene temples, Tokyo offers a unique blend of modernity and tradition. Neon-lit skyscrapers tower above ancient shrines, where the scent of incense mingles with the aroma of street food stalls selling takoyaki and ramen. In Shibuya, the energy of the famous crossing is electrifying, while just a short train ride away, the peaceful gardens of Asakusa invite quiet reflection.</p>
+          <p>Dive into Harajuku’s quirky fashion scene or savor the precision of a sushi master’s craft in Tsukiji. Tokyo seamlessly marries cutting-edge innovation with timeless customs, offering an unforgettable journey through its vibrant neighborhoods, each with its own story to tell.</p>
+          <p><strong>Host:</strong> <a href="https://www.booking.com/hotel/jp/my-tokyo-stay" target="_blank">Cozy Capsule Hotel in Shinjuku</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.979967895953!2d139.69171361528323!3d35.68948748019642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2sTokyo%20Skytree!5e0!3m2!1sen!2sjp!4v1698746123789!5m2!1sen!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/Tokyo1.jpeg", caption: "Onzan-ji: Eighteenth Temple of the Sacred Shikoku Pilgrimage in Tokushima" },
+          { src: "images/Tokyo2.jpeg", caption: "Traditional tea ceremony" },
+          { src: "images/Tokyo3.jpeg", caption: "Harajuku fashion district" },
+          { src: "images/Tokyo4.jpeg", caption: "Tsukiji fish market" }
+        ]
+      },
+      london: {
+        title: "London, UK: History meets modernity",
+        image: "images/london.jpg",
+        description: `
+          <p><strong>Visited:</strong> October 2024</p>
+          <p>Exploring iconic landmarks like Big Ben and the London Eye made this trip unforgettable. This vibrant city is a treasure trove of history, culture, and charm, where centuries-old castles stand alongside sleek skyscrapers. Wander through the hallowed halls of the British Museum or lose yourself in the literary magic of Shakespeare’s Globe Theatre.</p>
+          <p>Stroll along the Thames at sunset, with its shimmering reflections of the city’s grandeur, or indulge in a quintessential afternoon tea experience. From the bustling markets of Camden to the serene beauty of Hyde Park, London effortlessly blends tradition with innovation, leaving every visitor enchanted by its timeless allure.</p>
+          <p><strong>Where I Stayed:</strong> <a href="https://www.booking.com/hotel/gb/my-london-stay" target="_blank">Boutique Hotel near Covent Garden</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.291495575666!2d-0.12574!3d51.5073509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604c3b8d1b85b%3A0x784be0b4c7a4b0!2sBig%20Ben!5e0!3m2!1sen!2suk!4v1698746412345!5m2!1sen!2suk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/London1.jpeg", caption: "Big Ben at sunrise" },
+          { src: "images/London2.jpeg", caption: "A stroll at a football stadium" },
+          { src: "images/London3.jpeg", caption: "London neighborhoods" },
+          { src: "images/London4.jpeg", caption: "Attending a live football match." }
+        ]
+      },
+      newyork: {
+        title: "New York, USA: The city that never sleeps",
+        image: "images/newyork.jpg",
+        description: `
+          <p><strong>Visited:</strong> April 2024</p>
+          <p>The city that never sleeps dazzled me with its towering skyscrapers, dazzling Broadway shows, and vibrant tapestry of cultures. From the bright lights of Times Square to the serene paths of Central Park, New York is a city of contrasts and endless energy.</p>
+          <p>Savor world-class cuisine in food trucks or Michelin-starred restaurants, explore world-famous museums like the Met and MoMA, or catch a breathtaking performance on Broadway. Each neighborhood—whether it’s the artistic vibes of Brooklyn, the sophistication of Manhattan, or the cultural richness of Queens—offers its own unique charm. NYC pulses with life, creativity, and opportunity, promising an unforgettable adventure at every turn.</p>
+          <p><strong>Host:</strong> <a href="https://www.booking.com/hotel/us/my-newyork-stay" target="_blank">Luxury Hotel in Midtown Manhattan</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.984428946712!2d-73.99445578467752!3d40.75889597932686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c64c8fd9%3A0xb2fe25f1b5068443!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1698746789012!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/NY5.jpeg", caption: "Statue of Liberty" },
+          { src: "images/NY2.jpeg", caption: "" },
+          { src: "images/NY3.jpeg", caption: "" },
+          { src: "images/NY4.jpeg", caption: "Basketball (NBA) match" }
+        ]
+      },
+      rome: {
+        title: "Rome, Italy: Eternal beauty",
+        image: "images/rome.jpg",
+        description: `
+          <p><strong>Date Visited:</strong> March 2023</p>
+          <p>This eternal city breathes history, where every cobblestone whispers tales of emperors, gladiators, and artists. Stand in awe before the mighty Colosseum, stroll through the grandeur of the Roman Forum, or toss a coin into the Trevi Fountain to ensure your return.</p>
+          <p>In between exploring centuries-old landmarks, indulge in culinary masterpieces like authentic pasta carbonara and creamy gelato. Rome is a city where the past and present coexist harmoniously, inviting you to immerse yourself in its timeless charm.</p>
+          <p><strong>Where I Stayed:</strong> <a href="https://www.booking.com/hotel/it/my-rome-stay" target="_blank">Historic Inn near Vatican City</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.324859777756!2d12.492230915324708!3d41.89021027922114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColosseum!5e0!3m2!1sen!2sit!4v1698747123456!5m2!1sen!2sit" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/rome1.jpg", caption: "The Colosseum at dawn" },
+          { src: "images/rome2.jpg", caption: "Trevi Fountain wish" },
+          { src: "images/rome3.jpg", caption: "Authentic Italian pasta" },
+          { src: "images/rome4.jpg", caption: "Vatican City panorama" }
+        ]
+      },
+      cairo: {
+        title: "Cairo, Egypt: A journey through time",
+        image: "images/cairo1.jpg",
+        description: `
+          <p><strong>Date Visited:</strong> May 2023</p>
+          <p>The pyramids and rich history of Cairo left me in awe of this ancient civilization. Cairo stands in the shadow of the Great Pyramids of Giza and the Sphinx watching silently from afar. Being in Cairo feels like stepping back thousands of years. It is a city that buzzes with life, where bustling bazaars overflow with spices, textiles, and treasures and the majestic Al-Azhar Mosque whispers stories of faith and resilience.</p>
+          <p>From exploring the relics of the Pharaohs at the Egyptian Museum to cruising along the timeless Nile River, Cairo is a living museum that bridges the gap between antiquity and modernity. This vibrant city invites you to uncover its secrets and marvel at humanity’s enduring legacy.</p>
+          <p><strong>Where I Stayed:</strong> <a href="https://www.booking.com/hotel/eg/my-cairo-stay" target="_blank">Luxury Hotel overlooking the Nile</a></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.833561039616!2d31.13144291536865!3d29.979234581909024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840f7f5f22db9%3A0x86eacf8e4f22c490!2sGreat%20Pyramid%20of%20Giza!5e0!3m2!1sen!2seg!4v1698747567890!5m2!1sen!2seg" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        `,
+        images: [
+          { src: "images/cairo1.jpg", caption: "Pyramids of Giza" },
+          { src: "images/cairo2.jpg", caption: "Sphinx at sunset" },
+          { src: "images/cairo3.jpg", caption: "Egyptian Museum artifacts" },
+          { src: "images/cairo4.jpg", caption: "Nile River cruise" }
+        ]
       }
+    };
+    const selectedDestination = destinationsData[destination];
+    if (selectedDestination) {
+      document.getElementById('destination-title').textContent = selectedDestination.title;
+      document.getElementById('destination-content').innerHTML = `
+        <div class="destination-details">
+          <img src="${selectedDestination.image}" alt="${selectedDestination.title}" class="main-image" />
+          <div class="description">${selectedDestination.description}</div>
+        <h2>Memorable Moments</h2> 
+          <div class="photoss">
+            ${selectedDestination.images.map(image => `
+              <div class="image-with-caption">
+                <img src="${image.src}" alt="${selectedDestination.title} photo" class="photoss" />
+                <p class="caption">${image.caption}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
     }
-  </script>
+  }
+</script>
 </body>
 </html>

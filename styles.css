@@ -245,3 +245,112 @@ h2, h3 {
   color: #555;
   width: 100%;
 }
+
+
+/* Responsive Design: Mobile-first adjustments */
+
+/* For tablets (≤ 900px) */
+@media (max-width: 900px) {
+  main, header, footer, .header-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .gallery,
+  .quick-links .grid,
+  .photos,
+  .photoss {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img,
+  .quick-links .grid img,
+  .photos img,
+  .photoss img {
+    max-height: 180px;
+    height: 180px;
+  }
+
+  .logo {
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* For mobile devices (≤ 600px) */
+@media (max-width: 600px) {
+  main, header, footer, .header-container {
+    padding: 5px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  nav li {
+    width: 100%;
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .gallery,
+  .quick-links .grid,
+  .photos,
+  .photoss {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img,
+  .quick-links .grid img,
+  .photos img,
+  .photoss img {
+    max-height: 140px;
+    height: 140px;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 0 2px;
+  }
+  
+  .photoss .image-with-caption {
+    align-items: stretch;
+  }
+}
+
+/* Responsive text scaling */
+@media (max-width: 400px) {
+  body {
+    font-size: 0.9rem;
+  }
+  header h1 {
+    font-size: 0.9rem;
+  }
+}
+
